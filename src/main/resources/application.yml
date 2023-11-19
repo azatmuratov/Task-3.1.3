@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  main:
+    allow-circular-references: true
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
+  mvc.hiddenmethod.filter.enabled: true
+
