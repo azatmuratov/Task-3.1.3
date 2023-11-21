@@ -13,13 +13,13 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-public class AdminAndUserRestController {
+public class AdminRestController {
 
     private UserService userService;
     private RoleService roleService;
 
     @Autowired
-    public AdminAndUserRestController(UserService userService, RoleService roleService) {
+    public AdminRestController(UserService userService, RoleService roleService) {
         this.userService = userService;
         this.roleService = roleService;
     }
@@ -30,11 +30,7 @@ public class AdminAndUserRestController {
         return ResponseEntity.ok(usersList);
     }
 
-    @GetMapping("/person")
-    public ResponseEntity<User> userProfile(Principal principal) {
-        User user = userService.findByLogin(principal.getName());
-        return ResponseEntity.ok(user);
-    }
+  
     @GetMapping("/admin/people/new")
     public ResponseEntity<String> newUser() {
         roleService.listRoles();

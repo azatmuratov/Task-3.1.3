@@ -17,12 +17,11 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
     private UserRepository userRepository;
-    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) { //, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-//        this.passwordEncoder = passwordEncoder;
     }
 
     @Override

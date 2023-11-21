@@ -29,7 +29,7 @@ public class User implements UserDetails {
     @Column(name ="phone_number")
     private String phoneNumber;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "users_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
